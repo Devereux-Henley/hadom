@@ -1,9 +1,10 @@
 (ns ^:figwheel-no-load env.android.main
-  (:require [om.next :as om]
-            [hadom.android.core :as core]
-            [hadom.state :as state]
-            [figwheel.client :as fw]
-            [env.config :as conf]))
+  (:require
+   [compassus.core :as compassus]
+   [om.next :as om]
+   [hadom.android.core :as core]
+   [figwheel.client :as fw]
+   [env.config :as conf]))
 
 (enable-console-print!)
 
@@ -13,7 +14,7 @@
 (fw/start {
            :websocket-url    (:android conf/figwheel-urls)
            :heads-up-display false
-           :jsload-callback  #(om/add-root! state/reconciler core/AppRoot 1)})
+           :jsload-callback  #(compassus/mount! core/app 1)})
 
 (core/init)
 

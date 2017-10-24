@@ -5,7 +5,8 @@
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
             :dependencies [[org.clojure/clojure "1.9.0-alpha16"]
                            [org.clojure/clojurescript "1.9.542"]
-                           [org.omcljs/om "1.0.0-beta1" :exclusions [cljsjs/react cljsjs/react-dom]]]
+                           [org.omcljs/om "1.0.0-beta1" :exclusions [cljsjs/react cljsjs/react-dom]]
+                           [compassus "1.0.0-alpha3"]]
             :plugins [[lein-cljsbuild "1.1.4"]
                       [lein-figwheel "0.5.14"]]
             :clean-targets ["target/" "index.ios.js" "index.android.js" #_($PLATFORM_CLEAN$)]
@@ -76,5 +77,3 @@
                                                                    :optimizations :advanced
                                                                    :closure-defines {"goog.DEBUG" false}}}
 #_($ADVANCED_PROFILES$)]}}})
-                                                  
-                      
